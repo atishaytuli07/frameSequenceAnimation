@@ -64,6 +64,10 @@ function startAnimation() {
             loadImg(Math.floor(frames.currentIndex))
         }
     })
+
+    window.addEventListener("resize", function(){
+        loadImg(Math.floor(this.frames.currentIndex));
+    })
 }
 
 
