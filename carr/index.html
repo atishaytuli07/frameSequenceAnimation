@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Race</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+    <div class="w-full">
+        <div class="parent relative top-0 left-0 w-full h-[700vh]">
+            <div class="sticky top-0 left-0 h-screen w-full flex flex-col justify-center items-center">
+                <canvas id="framee" class="absolute top-0 left-0 w-full h-full"></canvas>
+                <h1 id="heading" class="text-8xl font-bold opacity-100 uppercase">Auto Racing.</h1>
+            </div>
+        </div>
+        <div class="relative w-full h-screen flex flex-col justify-between bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542339037-68f3d1818001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        
+            <div class="flex flex-col justify-end items-center h-full text-white">
+                <h1 class="text-white text-8xl font-bold mb-10 text-center border-b">Scouts always come back.</h1>
+                <div class="flex justify-between items-center w-full px-10 text-sm">
+                    <p class="uppercase">American made</p>
+                    <p class="text-center max-w-3xl mb-10 mt-20">
+                        Entry models starting as low as $50,000 with available incentives. Retail prices starting under
+                        $60,000. Initial production targeted for 2027. <a href="#" class="underline">Full disclaimer.</a>
+                    </p>
+                    <p class="uppercase">Est 2025</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to("#heading", {
+            scrollTrigger: {
+                trigger: ".parent",
+                start: "top top",
+                end: "center center",
+                scrub: 2,
+            },
+            opacity: 0,
+            y: -100,
+        });
+
+        gsap.to("#coming-soon", {
+            scrollTrigger: {
+                trigger: ".parent",
+                start: "bottom center",
+                end: "bottom top",
+                scrub: 2,
+            },
+            opacity: 1,
+            y: 0,
+        });
+
+        gsap.set("#coming-soon", { opacity: 0, y: 100 });
+    </script>
+</body>
+
+</html>
