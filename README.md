@@ -6,3 +6,6 @@ note : it is not a video, these are images (video frames) which moves on scrolli
 
 ### Auto Racing 🏎️
 ![huiiee](carr/ar.gif)
+
+### Doze Studios 🎙️
+![huiiee](Doze/ds.gif)
